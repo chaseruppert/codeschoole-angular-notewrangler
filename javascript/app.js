@@ -1,9 +1,8 @@
 (function() { 
 
-var app = angular.module('NoteWrangler', ['ngRoute']);
-
-app.controller('MainCtrl', function($scope) {
-  $scope.name = 'World';
-});
+angular.module('NoteWrangler', ['ngRoute'])
+    .controller('MainCtrl', function($scope) {
+        $scope.name = 'World';
+    });
 
 })();

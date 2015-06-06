@@ -1,26 +1,53 @@
-<DOCTYPE html>
-<html ng-app="NoteWrangler">
+<!DOCTYPE html>
+<html lang="en" ng-app="NoteWrangler">
 
-  <head>
-    <meta charset="utf-8" />
-    <title>AngularJS Plunker</title>
-    <script>document.write('<base href="' + document.location + '" />');</script>
-    <link rel="stylesheet" href="css/style.css" />
-    <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.28/angular.js" data-semver="1.2.28"></script>
-    <script src="https://code.angularjs.org/1.2.28/angular-route.js" data-semver="1.2.28"></script>
-    <script src="javascript/app.js"></script>
-    <script src="javascript/routes.js"></script>
-  </head>
+<head>
+    <meta charset="utf-8">
+    <title>Note Wrangler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/application.css" />
+</head>
 
-  <body ng-controller="MainCtrl">
-    <p>Hello {{name}}!</p>
+<body ng-controller="MainCtrl">
+    <div class="nav-wrapper has-dropdown">
+      <div class="nav-content">
+        <div class="wrapper">
+          <div class="nav-content-layout">
+            <div class="nav-list">
 
-    <div class="hero-wrapper"></div>
+              <a href="#/"
+              class="list-item"
+              ng-click="selected = 'notes'"
+              ng-class="{'active': selected == 'notes'}"> Notes </a>
+
+              <a href="#/users"
+              class="list-item"
+              ng-click="selected = 'users'"
+              ng-class="{'active': selected == 'users'}"> Users </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-wrapper">
+      <div class="hero-content">
+        <div class="hero"></div>
+      </div>
+    </div>
+
     <div class="main-wrapper">
         <div ng-view></div>
     </div>
 
-  </body>
+    <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.28/angular.js" data-semver="1.2.28"></script>
+    <script src="https://code.angularjs.org/1.2.28/angular-route.js" data-semver="1.2.28"></script>
+    <script src="javascript/app.js"></script>
+    <script src="javascript/routes.js"></script>
+
+
+</body>
 
 </html>
 
