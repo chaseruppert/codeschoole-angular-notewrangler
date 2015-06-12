@@ -8,16 +8,19 @@ angular.module('NoteWrangler')
             controllerAs: 'indexController'
         })
         .when('/notes/new', {
-            templateUrl: 'templates/pages/notes/edit.html'
+            templateUrl: 'templates/pages/notes/edit.html',
+            controller: 'NotesCreateController'
         })
         .when('/notes/:id', {
-            templateUrl: 'templates/pages/notes/show.html'
+            templateUrl: 'templates/pages/notes/show.html',
+            controller: 'NotesShowController',
+            controllerAs: 'showController'
         })
         .when('/users', {
             templateUrl: 'templates/pages/users/index.html'
         })
         .when('/', {
-            templateUrl: 'templates/pages/notes/index.html'
+            redirectTo: '/notes'
         })
         .otherwise({ redirectTo: '/' });
     });
