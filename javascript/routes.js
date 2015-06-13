@@ -4,8 +4,7 @@ angular.module('NoteWrangler')
     .config(function($routeProvider) {
         $routeProvider.when('/notes', {
             templateUrl: 'templates/pages/notes/index.html',
-            controller: 'NotesIndexController',
-            controllerAs: 'indexController'
+            controller: 'NotesIndexController'
         })
         .when('/notes/new', {
             templateUrl: 'templates/pages/notes/edit.html',
