@@ -1,11 +1,11 @@
 (function() { 
 
 angular.module('NoteWrangler')
-    .controller('NotesIndexController', [ '$http' , '$scope', function($http, $scope) {
+    .controller('NotesIndexController', function($scope, Note) {
         
-        $http({method: 'GET', url: '/data/notes.json'}).success(function(data) {
+        Note.all().success(function(data) {
             $scope.notes = data;
         });
-    }]);
+    });
 
 })();
